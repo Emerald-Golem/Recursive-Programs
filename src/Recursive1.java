@@ -8,29 +8,22 @@ public class Recursive1 {
     }
 
     public int generator(int n, int digits){
-        int i = n+1;
-        int j =i;
+
+        int j =n;
         String s = ""+j;
         int l = s.length();
-        if(l>digits){
+        if(l==digits||digits==1){
+            System.out.println(j);
             return 0;
         }
-        while(i>10) {
-            if (i % 10 > (i / 10) % 10) {
-                i /= 10;
-            } else {
-
-            }
-
-            if (l == digits) {
-                System.out.println(j);
-            }
+        for(int k=0; k<9;k++) {
+            generator((j*10)+(j%10)+1,digits);
+            j++;
         }
-        return 0;
     }
 
     public static void main(String[] args) {
         Recursive1 r = new Recursive1();
-        r.recursion(2);
+        r.recursion(3);
     }
 }
