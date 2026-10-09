@@ -5,20 +5,15 @@ public class Recursive3 {
         } else if (s.length()>l) {
             return;
         }
-        if(s.length()>=1) {
-
-                recursion(l, s+"0");
-            if (!s.substring( s.length() - 1).equals("1")) {
-                recursion(l, s + "1");
-            }
-        }else{
-            recursion(l,s+"0");
-                recursion(l, s + "1");
+        recursion(l, s+"0");
+        if (s.length()==0||!s.substring( s.length() - 1).equals("1")) {
+            recursion(l, s + "1");
         }
+
     }
 
     public static void main(String[] args) {
         Recursive3 r = new Recursive3();
-        r.recursion(5,"100");
+        r.recursion(4,"");
     }
 }
