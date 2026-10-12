@@ -12,9 +12,6 @@ public class Recursive4 {
         recursion(s+"1",n);
     }
     public int helper(String s){
-        if(s.length()==0){
-            return 0;
-        }
         if(s.indexOf("0")!=-1){
             return helper(s.substring(0,s.indexOf("0"))+s.substring(s.indexOf("0")+1));
         }else{
