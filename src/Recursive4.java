@@ -18,8 +18,11 @@ public class Recursive4 {
             return s.length();
         }
     }
+    public void starter(int n){
+        recursion("",n);
+    }
     public static void main(String[] args) {
         Recursive4 r = new Recursive4();
-        r.recursion("",4);
+        r.starter(8);
     }
 }
