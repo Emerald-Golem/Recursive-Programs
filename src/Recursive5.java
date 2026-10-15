@@ -4,7 +4,7 @@ public class Recursive5 {
     }
     public int chocolate(double m, double c, int w, int wrappers){
         if(wrappers>=w){
-            return 1+chocolate(m,c,w,wrappers-w);
+            return 1+chocolate(m,c,w,wrappers-w+1);
         }
         if(c>m){
             return 0;
