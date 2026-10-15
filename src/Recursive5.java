@@ -1,19 +1,18 @@
 public class Recursive5 {
-    public int starter(double m,double c,int w){
-        return chocolate(m,c,w,0);
-    }
-    public int chocolate(double m, double c, int w, int wrappers){
-        if(wrappers>=w){
-            return 1+chocolate(m,c,w,wrappers-w+1);
-        }
-        if(c>m){
+    public int helper(int c,int w){
+        if(w>c){
             return 0;
         }
-        return 1+chocolate(m-c,c,w,wrappers+1);
-
+        int choc= c/w;
+        int extra = c%w;
+        return choc+helper(choc+extra,w);
+    }
+    public int chocolate(double m, double c, int w){
+        int choc = (int) (m/c);
+        return choc+helper(choc,w);
     }
     public static void main(String[] args) {
         Recursive5 r = new Recursive5();
-        System.out.println(r.starter(102,0.1,2));
+        System.out.println(r.chocolate(250,2,3));
     }
 }
